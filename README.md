@@ -594,6 +594,33 @@
     const foo = `my name is '${name}'`;
     ```
 
+  <a name="strings--shared"></a>
+  - [6.6](#strings--shared) If you are using same string between two or more files, you should create exported constant (with SCREAMING_SNAKE_CASE).
+
+    > Why? To avoid typos in strings and to avoid big refactor when one value will change.
+
+    ```javascript
+    // bad
+    // firstFile.js
+    function some(a) {
+      return a === 'isValid';
+    }
+
+    //secondFile.js
+    const someValue = 'isValid';
+
+    //good
+    // firstFile.js
+    import { IS_VALID } from './secondFile';
+    function some(a) {
+      return a === IS_VALID;
+    }
+
+    //secondFile.js
+    export const IS_VALID = 'isValid';
+    const someValue = IS_VALID;
+    ```
+
 **[⬆ back to top](#table-of-contents)**
 
 
