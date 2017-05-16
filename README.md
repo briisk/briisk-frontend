@@ -2877,9 +2877,10 @@
     ```
 
   <a name="accessors--consistent"></a><a name="23.4"></a>
-  - [23.4](#accessors--consistent) It's okay to create get() and set() functions, but be consistent.
+  - [23.4](#accessors--consistent) It's not okay to create get() and set() functions. Why? Because get and set should be used only as getters and setters.
 
     ```javascript
+    // bad
     class Jedi {
       constructor(options = {}) {
         const lightsaber = options.lightsaber || 'blue';
@@ -2892,6 +2893,22 @@
 
       get(key) {
         return this[key];
+      }
+    }
+
+    // good
+    class Jedi {
+      constructor(options = {}) {
+        const lightsaber = options.lightsaber || 'blue';
+        this._lightsaber = lightsaber;
+      }
+
+      set lightsaber(val) {
+        this._lightsaber = val;
+      }
+
+      get lightsaber() {
+        return this._lightsaber;
       }
     }
     ```
