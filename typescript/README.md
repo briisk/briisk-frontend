@@ -15,3 +15,21 @@ Briisk TypeScript Style Guide
       name: string;
     }
     ```
+
+## Types
+
+  <a name="type--any"></a><a name="2.1"></a>
+  - [2.1](#type--any) Avoid using `any` type if it is possible. Always create an interface or use an existing one.
+
+    > Why? Because type `any` doesn't tell us anything about the object that you are using. The IDE and the compilator will help you to avoid mistakes, for example, typos or use nonexisting methods/attributes.
+
+    ```javascript
+    // bad
+    someArray.map((item: any) => item.value);
+
+    // good
+    interface Item {
+      value: string;
+    }
+    someArray.map((item: Item) => item.value);
+    ```
