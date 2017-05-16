@@ -902,6 +902,36 @@
       baz,
     );
     ```
+  <a name="functions--methods"></a><a name="7.1"></a>
+  - [7.1](#functions--methods) If the method is not manipulating an instance of a class (if there is no this keyword in the method) then this is a function that should be outside of the class. Static methods aren't expected to use this. eslint: [`class-methods-use-this`](http://eslint.org/docs/rules/class-methods-use-this)
+
+    > Why? Because this method is not operating on the object, it's independent. It will be possible to use it in other places of the application. Also, if it is a public function, testing will be easier.
+
+    ```javascript
+    // bad
+    class SomeClass {
+      addItem(arr, item) {
+        return arr.concat(item);
+      }
+    ...
+    }
+
+    // good
+    class SomeClass {
+    ...
+    }
+
+    function addItem(arr, item) {
+      return arr.concat(item);
+    }
+
+    // good
+    class SomeClass {
+      static addItem(arr, item) {
+        return arr.concat(item);
+      }
+    }
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
