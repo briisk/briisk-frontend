@@ -1195,6 +1195,44 @@
     }
     ```
 
+  <a name="classes--inheritance"></a>
+  - [9.7](#classes--inheritance) Don't inherit from more than one class.
+
+    > Why? Because it is hard to maintain this kind of objects, you need to search through more than two classes where attributes and methods come from. Create functions instead if possible
+
+    ```javascript
+    // bad
+    class Class1 {
+    ...
+    method1() {..};
+    }
+
+    class Class2 extends Class1 {
+    ...
+    }
+
+    class Class3 extends Class2 {
+    ...
+      method2() {
+        this.method1();
+      }
+    }
+
+    // good
+    function method1() {..};
+
+    class Class2  {
+    ...
+    }
+
+    class Class3 extends Class2 {
+    ...
+      method2() {
+        method1();
+      }
+    }
+    ```
+
 
 **[⬆ back to top](#table-of-contents)**
 
