@@ -902,8 +902,8 @@
       baz,
     );
     ```
-  <a name="functions--methods"></a><a name="7.1"></a>
-  - [7.1](#functions--methods) If the method is not manipulating an instance of a class (if there is no this keyword in the method) then this is a function that should be outside of the class. Static methods aren't expected to use this. eslint: [`class-methods-use-this`](http://eslint.org/docs/rules/class-methods-use-this)
+  <a name="functions--methods"></a><a name="7.16"></a>
+  - [7.16](#functions--methods) If the method is not manipulating an instance of a class (if there is no this keyword in the method) then this is a function that should be outside of the class. Static methods aren't expected to use this. eslint: [`class-methods-use-this`](http://eslint.org/docs/rules/class-methods-use-this)
 
     > Why? Because this method is not operating on the object, it's independent. It will be possible to use it in other places of the application. Also, if it is a public function, testing will be easier.
 
@@ -931,6 +931,18 @@
         return arr.concat(item);
       }
     }
+    ```
+
+  <a name="functions--higher-order-functions"></a><a name="7.17"></a>
+  - [7.17](#functions--methods) Use higher order functions when you are returning a function called with the same arguments.
+  Be careful with methods, you will need to use bind(this)
+
+    ```javascript
+    // bad
+    someArray.map(item => someFunction(item));
+
+    // good
+    someArray.map(someFunction);
     ```
 
 **[⬆ back to top](#table-of-contents)**
