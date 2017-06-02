@@ -2456,15 +2456,15 @@
     ```
 
   <a name="whitespace--in-brackets"></a><a name="18.10"></a>
-  - [18.10](#whitespace--in-brackets) Do not add spaces inside brackets. eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) jscs: [`disallowSpacesInsideArrayBrackets`](http://jscs.info/rule/disallowSpacesInsideArrayBrackets)
+  - [18.10](#whitespace--in-brackets) Add spaces inside brackets. But do not add spaces if accessing object attributes. eslint: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html) [`computed-property-spacing`](http://eslint.org/docs/rules/computed-property-spacing) 
 
     ```javascript
     // bad
-    const foo = [ 1, 2, 3 ];
+    const foo = [1, 2, 3];
     console.log(foo[ 0 ]);
 
     // good
-    const foo = [1, 2, 3];
+    const foo = [ 1, 2, 3 ];
     console.log(foo[0]);
     ```
 
