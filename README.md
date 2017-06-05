@@ -315,21 +315,8 @@
     const items = [];
     ```
 
-  <a name="arrays--push"></a><a name="4.2"></a>
-  - [4.2](#arrays--push) Use [Array#push](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/push) instead of direct assignment to add items to an array.
-
-    ```javascript
-    const someStack = [];
-
-    // bad
-    someStack[someStack.length] = 'abracadabra';
-
-    // good
-    someStack.push('abracadabra');
-    ```
-
-  <a name="es6-array-spreads"></a><a name="4.3"></a>
-  - [4.3](#es6-array-spreads) Use array spreads `...` to copy arrays.
+  <a name="es6-array-spreads"></a><a name="4.2"></a>
+  - [4.2](#es6-array-spreads) Use array spreads `...` to copy arrays.
 
     ```javascript
     // bad
@@ -345,16 +332,16 @@
     const itemsCopy = [...items];
     ```
 
-  <a name="arrays--from"></a><a name="4.4"></a>
-  - [4.4](#arrays--from) To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
+  <a name="arrays--from"></a><a name="4.3"></a>
+  - [4.3](#arrays--from) To convert an array-like object to an array, use [Array.from](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from).
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
     const nodes = Array.from(foo);
     ```
 
-  <a name="arrays--callback-return"></a><a name="4.5"></a>
-  - [4.5](#arrays--callback-return) Use return statements in array method callbacks. It's ok to omit the return if the function body consists of a single statement following [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
+  <a name="arrays--callback-return"></a><a name="4.4"></a>
+  - [4.4](#arrays--callback-return) Use return statements in array method callbacks. It's ok to omit the return if the function body consists of a single statement following [8.2](#8.2). eslint: [`array-callback-return`](http://eslint.org/docs/rules/array-callback-return)
 
     ```javascript
     // good
@@ -404,8 +391,8 @@
 
 **[⬆ back to top](#table-of-contents)**
 
-<a name="arrays--bracket-newline"></a>
-  - [4.6](#arrays--bracket-newline) Use line breaks after open and before close array brackets if an array has multiple lines
+<a name="arrays--bracket-newline"></a><a name="4.5"></a>
+  - [4.5](#arrays--bracket-newline) Use line breaks after open and before close array brackets if an array has multiple lines
 
   ```javascript
   // bad
@@ -440,6 +427,52 @@
     2,
   ];
   ```
+<a name="arrays--allowed-methods"></a><a name="4.6"></a>
+  - [4.6](#arrays--allowed-methods) **Allowed methods**:
+
+  **[Concat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=control)**
+  Use this method, if you want to add an item to the array or you want to merge two arrays.
+
+  **[Every](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every?v=control)**
+  Use this method, if you want to check that all items in the array pass the test provided by the function.
+
+  **[Fill](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill?v=control)**
+  Use this method, if you want to set values for the array. Use this method instead of map if value is static.
+
+  **[Filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter?v=control)**
+  Use this method for removing items from the array
+
+  **[Find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find?v=control)**
+  Use this method, if you want exactly one item from the array. If you want more than one, use filter.
+
+  **[forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?v=control)**
+  Use this method, if you to trigger side effect. For example calling some action, triggering an event. Don't use it for modifying array.
+
+  **[Includes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes?v=control)**
+  Use this method, if you want to check if at least one array includes given argument.
+
+  **[Join](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join?v=control)**
+  Use this method, if you want to join all items into one string.
+
+  **[Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map?v=control)**
+  Use this method for modifying items in the array. You can modify one or more. Also, you can return different items depending on actual, but the size of the array will be the same.
+
+  **[Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce?v=control)**   **[ReduceRight](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight?v=control)**
+  Use this method for generating different structures: strings, objects, arrays with different number of items
+
+  **[Reverse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse?v=control)**
+  Use this method, if you want to reverse the order of items in the array, but only with a slice()or spread operator `const reversed = [...myArray].reverse()` because it mutates the original array.
+
+  **[Slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice?v=control)**
+  Use this method, if you want remove item/items from the array and you know the index. If you don't know the index, use filter.
+
+  **[Some](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some?v=control)**
+  Use this method, if you want to check that at least one item in the array pass the test provided by the function.
+
+  **[Sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort?v=control)**
+  Use this method, if you want to sort items in the array, but only with a slice()or spread operator `const sorted = [...myArray].reverse()` because it mutates the original array.
+
+  Other methods are forbidden.
 
 **[⬆ back to top](#table-of-contents)**
 
