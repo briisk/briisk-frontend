@@ -4,6 +4,7 @@
 
 ## Table of Contents
 
+  1. [Scripts in package.json](#scripts-in-package)
   1. [Basic Rules](#basic-rules)
   1. [Class vs `React.createClass` vs stateless](#class-vs-reactcreateclass-vs-stateless)
   1. [Mixins](#mixins)
@@ -21,6 +22,40 @@
   1. [`isMounted`](#ismounted)
   1. [Project configuration files](#project-configuration-files)
 
+
+## Scripts in package.json
+
+**npm run init** - to initialize application, should be run once after git clone
+
+**npm start:android** - to start application, should run application in the development mode on android
+
+**npm start:android:production** - to start application, should run application in the production mode on android
+
+**npm run build:android:production** - to build application, should build application in the production mode on android
+
+**npm run build:android:staging** - to build application, should build application in the staging mode on android
+
+**npm run build:android:workspace** - to build application, should build application in the workspace mode on android
+
+**npm run build:android:dev** - to build application, should build application in the development mode on android
+
+**npm start:ios** - to start application, should run application in the development mode on ios
+
+**npm start:ios:production** - to start application, should run application in the production mode on ios
+
+**npm run build:ios:production** - to build application, should build application in the production mode on ios
+
+**npm run build:ios:staging** - to build application, should build application in the staging mode on ios
+
+**npm run build:ios:workspace** - to build application, should build application in the workspace mode on ios
+
+**npm run build:ios:dev** - to build application, should build application in the development mode on ios
+
+**npm test** - to test application, should run test with watch flag and in the continuous mode
+
+**npm run test:ci** - to test application, should run test without watch flag and in the single run mode
+
+**npm run lint** - to lint application, should run all linters once
 
 ## Basic Rules
 

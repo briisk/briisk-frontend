@@ -1,5 +1,27 @@
 Briisk AngularJS 1.x Style Guide
 
+## Scripts in package.json
+
+**npm run init** - to initialize application, should be run once after git clone
+
+**npm start** - to start application, should run application in the development mode
+
+**npm start:production** - to start application, should run application in the production mode
+
+**npm run build:production** - to build application, should build application in the production mode
+
+**npm run build:staging** - to build application, should build application in the staging mode
+
+**npm run build:workspace** - to build application, should build application in the workspace mode
+
+**npm run build:dev** - to build application, should build application in the development mode
+
+**npm test** - to test application, should run test with watch flag and in the continuous mode
+
+**npm run test:ci** - to test application, should run test without watch flag and in the single run mode
+
+**npm run lint** - to lint application, should run all linters once
+
 ## Project configuration files
 Environment configuration files should be placed into: `src/environmenjs/` directory (following Angular CLI pattern).
 
