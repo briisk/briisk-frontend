@@ -2033,6 +2033,30 @@
     const baz = !c;
     ```
 
+  <a name="comparison--multiline"></a><a name="15.8"></a>
+  - [15.8](#comparison--multiline) Avoid unneeded ternary statements.
+
+    eslint rules: [`multiline-ternary`](http://eslint.org/docs/rules/multiline-ternary).
+
+    ```javascript
+    // bad
+    someStatement ?
+    value1
+    :
+    value2;
+
+    //bad
+    someStatement
+    ? value1
+    : value2;
+
+
+    // good
+    someStatement ?
+      value1 :
+      value2;
+    ```
+
 **[⬆ back to top](#table-of-contents)**
 
 
