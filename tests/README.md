@@ -316,7 +316,7 @@ describe('Saving the user profile', () => {
 
     expect(request.url).toBe('/profiles/1');
     expect(request.method).toBe('POST');
-    expect(request.data()).toEqual({ username: 'mawrkus' });
+    expect(request.data()).toEqual({ username: 'Markus' });
 
     jasmine.Ajax.uninstall();
   });
