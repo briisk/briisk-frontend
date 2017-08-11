@@ -216,7 +216,7 @@ it('should properly sanitize strings', () => {
   };
 
   for (result in testValues) {
-    expect(sanitizeString(testValues[result]) .toEqual(result);
+    expect(sanitizeString(testValues[result]).toEqual(result);
   }
 });
 ```
