@@ -35,7 +35,7 @@ This could involve **multiple methods and classes** invoked by some public API t
 
 + Return a value or throw an exception
 + Change the state of the system
-+ Make 3rd party callsą
++ Make 3rd party calls
 
 A unit test should test the behaviour of a unit of work: for a given input, it expects an end result that can be any of the above.
 
