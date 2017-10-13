@@ -3031,7 +3031,7 @@
   - [23.1](#accessors--not-required) Accessor functions for properties are not required.
 
   <a name="accessors--boolean-prefix"></a><a name="23.3"></a>
-  - [23.2](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()` or `hasVal()`.
+  - [23.2](#accessors--boolean-prefix) If the property/method is a `boolean`, use `isVal()`, `hasVal()`, `showVal()` or `hideVal()`.
 
     ```javascript
     // bad
